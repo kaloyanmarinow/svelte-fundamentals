@@ -1,0 +1,80 @@
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-size-adjust: none;
+    padding: 0;
+    margin: 0!important;
+    font-family: "Fira Code", monospace;
+    background: rgb(46, 50, 59);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body > div:not([class]):not([id]) {
+    display: flex!important;
+    flex-direction: column;	
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1440px;
+    padding-inline: 40px;
+    margin-inline: auto;
+}
+
+/* Typography */
+h1 {
+    font-size: 4.2vw;
+    line-height: 1.6;
+    font-weight: 500;
+}
+h2 {
+    font-size: 3vw;
+    line-height: 1.2;
+}
+
+h4 {
+    font-size: 2.2vw;
+    line-height: 1.6;
+    font-weight: 500;
+    color: #fff;
+}
+
+h5 {
+    font-size: 1.8vw;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Btn */
+.btn {
+    background: rgb(165, 207, 39);
+    border: 0;
+    outline: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 24px;
+    padding: 10px 24px;
+    border-radius: 5px;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: background .4s
+}
+
+.btn:hover {
+    background: rgb(255, 88, 88);
+}
