@@ -1,3 +1,61 @@
+<div class="header">
+	<nav class="nav">
+		<ul>
+			<li>
+				<span>Lifecycle методи</span>
+
+				<ul>
+					<li>
+						<a href="/lifecycle-methods/on-mount">onMount()</a>
+					</li>
+					<li>
+						<a href="/lifecycle-methods/on-destroy">onDestroy()</a>
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<span>Bind</span>
+
+				<ul>
+					<li>
+						<a href="/bind/value">bind:value</a>
+					</li>
+					<li>
+						<a href="/bind/checked">bind:checked</a>
+					</li>
+
+					<li>
+						<a href="/bind/this">bind:this</a>
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<span>Runes</span>
+
+				<ul>
+					<li>
+						<a href="/runes/state">&#36;state</a>
+					</li>
+
+					<li>
+						<a href="/runes/derived">&#36;derived</a>
+					</li>
+
+					<li>
+						<a href="/runes/effect">&#36;effect</a>
+					</li>
+
+					<li>
+						<a href="/runes/props">&#36;props</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</nav><!-- /.nav -->
+</div><!-- /.header -->
+
 <style>
 	.nav ul {
 		list-style-type: none;
@@ -63,39 +121,3 @@
 		padding: 10px;
 	}
 </style>
-
-<div class="header">
-	<nav class="nav">
-		<ul>
-			<li>
-				<a href="/lifecycle-methods">Lifecycle методи</a>
-			</li>
-
-			<li>
-				<a href="/bind">Bind</a>
-			</li>
-
-			<li>
-				<span>Runes</span>
-
-				<ul>
-					<li>
-						<a href="/runes/state">&#36;state</a>
-					</li>
-
-					<li>
-						<a href="/runes/derived">&#36;derived</a>
-					</li>
-
-					<li>
-						<a href="/runes/effect">&#36;effect</a>
-					</li>
-
-					<li>
-						<a href="/runes/props">&#36;props</a>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</nav><!-- /.nav -->
-</div><!-- /.header -->

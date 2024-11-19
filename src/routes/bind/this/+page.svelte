@@ -3,25 +3,20 @@
 	 * Internal dependencies.
 	 */
 	import Header from '../../../components/Header.svelte';	
-	import Footer from '../../../components/Footer.svelte';
+	import Footer from '../../../components/Footer.svelte';	
+	import ChildComponent from './ChildComponent.svelte';
 	import '../../../global.css';
 
-	let size = $state(150);
-	let color = $state('#ff3e00');
+	let childComponentInstance;
 
-	let canvas;
-
-	function getRandomColor() {
-		return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+	/**
+	 * Call child method.
+	 */
+	function callChildMethod() {
+		if (childComponentInstance) {
+			childComponentInstance.sayHello();
+		}
 	}
-
-	$effect(() => {
-		const context = canvas.getContext('2d');
-		context.clearRect(0, 0, canvas.width, canvas.height);
-
-		context.fillStyle = color;
-		context.fillRect(0, 0, size, size);
-	});
 </script>
 
 <Header />
@@ -29,19 +24,14 @@
 <div class="section">
 	<div class="container">
 		<div class="section__title">
-			<h2>&#36;effect</h2>
+			<h2>bind:this</h2>
 		</div><!-- /.section__title -->
 
 		<div class="section__box">
-			<canvas bind:this={canvas} width="150" height="150"></canvas>
+			<ChildComponent bind:this={childComponentInstance} />
 
-			<button 
-				class="btn" 
-				onclick={() => (color = getRandomColor())}
-			>
-				Change Color
-			</button>
-		</div><!-- /.section-box -->
+			<button class="btn" on:click={callChildMethod}>Call child method</button>
+		</div><!-- /.section__box -->
 	</div><!-- /.container -->
 </div><!-- /.section -->
 
@@ -60,7 +50,7 @@
 		text-align: center;
 		margin-bottom: 3rem;
 	}
-
+	
 	.section .section__box {
 		width: 100%;
 		background: rgb(22, 25, 31);
@@ -79,3 +69,4 @@
 		margin-bottom: 30px;
 	}
 </style>
+

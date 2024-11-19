@@ -72,9 +72,18 @@ h5 {
     border-radius: 5px;
     letter-spacing: 0.02em;
     cursor: pointer;
-    transition: background .4s
+    transition: background .4s, opacity .4s;
+}
+
+.btn:disabled {
+    opacity: .5;
+    pointer-events: none;
 }
 
 .btn:hover {
     background: rgb(255, 88, 88);
+}
+
+.section .section__box-list li.is-active {
+    color: rgb(165, 207, 39);
 }

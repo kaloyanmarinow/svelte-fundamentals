@@ -3,24 +3,22 @@
 	 * Internal dependencies.
 	 */
 	import Header from '../../../components/Header.svelte';	
-	import Footer from '../../../components/Footer.svelte';
+	import Footer from '../../../components/Footer.svelte';	
 	import '../../../global.css';
+	
+	/**
+	 * External dependencies.
+	 */
+	import { onDestroy } from 'svelte';
 
-	let size = $state(150);
-	let color = $state('#ff3e00');
+	let seconds = $state(0);
 
-	let canvas;
+	const interval = setInterval(() => {
+		seconds += 1
+	}, 1000);
 
-	function getRandomColor() {
-		return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
-	}
-
-	$effect(() => {
-		const context = canvas.getContext('2d');
-		context.clearRect(0, 0, canvas.width, canvas.height);
-
-		context.fillStyle = color;
-		context.fillRect(0, 0, size, size);
+	onDestroy(() => {
+		clearInterval(interval);
 	});
 </script>
 
@@ -29,19 +27,20 @@
 <div class="section">
 	<div class="container">
 		<div class="section__title">
-			<h2>&#36;effect</h2>
+			<h2>onDestroy()</h2>
 		</div><!-- /.section__title -->
 
 		<div class="section__box">
-			<canvas bind:this={canvas} width="150" height="150"></canvas>
+			<h4>
+				The page has been open for
+				{seconds}
+				{seconds === 1 ? 'second' : 'seconds'}.
+			</h4>
 
-			<button 
-				class="btn" 
-				onclick={() => (color = getRandomColor())}
-			>
-				Change Color
+			<button class="btn" on:click={() => window.location.reload()}>
+				Refresh
 			</button>
-		</div><!-- /.section-box -->
+		</div><!-- /.section__box -->
 	</div><!-- /.container -->
 </div><!-- /.section -->
 

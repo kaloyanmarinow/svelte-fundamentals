@@ -3,25 +3,10 @@
 	 * Internal dependencies.
 	 */
 	import Header from '../../../components/Header.svelte';	
-	import Footer from '../../../components/Footer.svelte';
+	import Footer from '../../../components/Footer.svelte';	
 	import '../../../global.css';
 
-	let size = $state(150);
-	let color = $state('#ff3e00');
-
-	let canvas;
-
-	function getRandomColor() {
-		return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
-	}
-
-	$effect(() => {
-		const context = canvas.getContext('2d');
-		context.clearRect(0, 0, canvas.width, canvas.height);
-
-		context.fillStyle = color;
-		context.fillRect(0, 0, size, size);
-	});
+	let name = $state('world');
 </script>
 
 <Header />
@@ -29,19 +14,14 @@
 <div class="section">
 	<div class="container">
 		<div class="section__title">
-			<h2>&#36;effect</h2>
+			<h2>bind:value</h2>
 		</div><!-- /.section__title -->
 
 		<div class="section__box">
-			<canvas bind:this={canvas} width="150" height="150"></canvas>
-
-			<button 
-				class="btn" 
-				onclick={() => (color = getRandomColor())}
-			>
-				Change Color
-			</button>
-		</div><!-- /.section-box -->
+			<input bind:value={name} />
+			
+			<h4>Hello <span>{name}</span>!</h4>
+		</div><!-- /.section__box -->
 	</div><!-- /.container -->
 </div><!-- /.section -->
 
@@ -58,9 +38,9 @@
 	.section .section__title {
 		color: rgb(255, 88, 88);
 		text-align: center;
-		margin-bottom: 3rem;
+		margin-bottom: 30px;
 	}
-
+	
 	.section .section__box {
 		width: 100%;
 		background: rgb(22, 25, 31);
@@ -75,7 +55,28 @@
 		justify-content: center;
 	}
 
+	.section .section__box input {
+		height: 40px;
+		min-width: 300px;
+		line-height: 38px;
+		background: transparent;
+		border: 1px solid rgb(231, 231, 231);
+		padding: 0 16px;
+		color: rgb(231, 231, 231);
+		font-size: 20px;
+		transition: border-color .4s;
+	}
+
+	.section .section__box input:focus {
+		border-color: rgba(165, 207, 39, .7);
+	}
+
+	.section .section__box h4 span {
+		color: rgb(165, 207, 39);
+	}
+
 	.section .section__box > *:not(:last-child) {
 		margin-bottom: 30px;
 	}
 </style>
+

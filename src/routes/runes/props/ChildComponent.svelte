@@ -3,7 +3,11 @@
 </script>
 
 <div class="section">
-	<div class="container section__container">
+	<div class="container">
+		<div class="section__title">
+			<h2>&#36;props</h2>
+		</div><!-- /.section__title -->
+
 		<div class="section__box">
 			<h2>
 				This component is <span>{props.adjective}</span>!
@@ -20,18 +24,18 @@
 		flex-grow: 1;
 	}
 
-	.section .section__container {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	.section .section__title {
+		color: rgb(255, 88, 88);
+		text-align: center;
+		margin-bottom: 3rem;
 	}
 
 	.section .section__box {
 		width: 100%;
-		background: rgb(231, 231, 231);
+		background: rgb(22, 25, 31);
 		padding: 40px;
 		border-radius: 20px;
-		color: rgb(46, 50, 59);
+		color: rgb(231, 231, 231);
 		text-align: center;
 		min-height: 300px;
 		display: flex;
