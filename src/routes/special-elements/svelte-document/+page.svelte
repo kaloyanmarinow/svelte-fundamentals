@@ -3,24 +3,30 @@
 	 * Internal dependencies.
 	 */
 	import Header from '../../../components/Header.svelte';	
-	import Footer from '../../../components/Footer.svelte';	
+	import Footer from '../../../components/Footer.svelte';
 	import '../../../global.css';
 
-	let name = 'world';
+	let clickPosition = { x: 0, y: 0 };
+
+	const handleClick = (event) => {
+		clickPosition = { x: event.clientX, y: event.clientY };
+	};
 </script>
+
+<svelte:document on:click={handleClick} />
 
 <Header />
 
 <div class="section">
 	<div class="container">
 		<div class="section__title">
-			<h2>bind:value</h2>
+			<h2>&#60;svelte:document&#62;</h2>
 		</div><!-- /.section__title -->
 
 		<div class="section__box">
-			<input bind:value={name} />
+			<h4>Click anywhere to update the position</h4>
 			
-			<h4>Hello <span>{name}</span>!</h4>
+			<p>Click Position: {clickPosition.x}px, {clickPosition.y}px</p>
 		</div><!-- /.section__box -->
 	</div><!-- /.container -->
 </div><!-- /.section -->
@@ -38,7 +44,7 @@
 	.section .section__title {
 		color: rgb(255, 88, 88);
 		text-align: center;
-		margin-bottom: 30px;
+		margin-bottom: 3rem;
 	}
 	
 	.section .section__box {
@@ -55,28 +61,8 @@
 		justify-content: center;
 	}
 
-	.section .section__box input {
-		height: 40px;
-		min-width: 300px;
-		line-height: 38px;
-		background: transparent;
-		border: 1px solid rgb(231, 231, 231);
-		padding: 0 16px;
-		color: rgb(231, 231, 231);
-		font-size: 20px;
-		transition: border-color .4s;
-	}
-
-	.section .section__box input:focus {
-		border-color: rgba(165, 207, 39, .7);
-	}
-
-	.section .section__box h4 span {
-		color: rgb(165, 207, 39);
-	}
-
 	.section .section__box > *:not(:last-child) {
 		margin-bottom: 30px;
 	}
 </style>
-
+	

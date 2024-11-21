@@ -6,7 +6,7 @@
 	import Footer from '../../../components/Footer.svelte';
 	import '../../../global.css';
 
-	let isChecked = $state(false);
+	let isChecked = false;
 </script>
 
 <Header />

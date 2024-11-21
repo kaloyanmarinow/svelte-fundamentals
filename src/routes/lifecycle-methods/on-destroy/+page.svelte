@@ -11,7 +11,7 @@
 	 */
 	import { onDestroy } from 'svelte';
 
-	let seconds = $state(0);
+	let seconds = 0;
 
 	const interval = setInterval(() => {
 		seconds += 1

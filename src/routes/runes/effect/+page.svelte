@@ -17,7 +17,6 @@
 
 	$effect(() => {
 		const context = canvas.getContext('2d');
-		context.clearRect(0, 0, canvas.width, canvas.height);
 
 		context.fillStyle = color;
 		context.fillRect(0, 0, size, size);
@@ -33,7 +32,7 @@
 		</div><!-- /.section__title -->
 
 		<div class="section__box">
-			<canvas bind:this={canvas} width="150" height="150"></canvas>
+			<canvas bind:this={canvas} width={size} height={size}></canvas>
 
 			<button 
 				class="btn" 

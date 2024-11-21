@@ -52,6 +52,20 @@
 					</li>
 				</ul>
 			</li>
+
+			<li>
+				<span>Специални елементи</span>
+
+				<ul>
+					<li>
+						<a href="/special-elements/svelte-head">&#60;svelte:head&#62;</a>
+					</li>
+
+					<li>
+						<a href="/special-elements/svelte-document">&#60;svelte:document&#62;</a>
+					</li>
+				</ul>
+			</li>
 		</ul>
 	</nav><!-- /.nav -->
 </div><!-- /.header -->

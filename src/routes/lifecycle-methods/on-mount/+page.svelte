@@ -16,6 +16,7 @@
 	onMount(async () => {
 		const res = await fetch(`https://reqres.in/api/users?delay=3`);
 		const resJSON = await res.json();
+
 		photos = resJSON.data;
 	});
 </script>
